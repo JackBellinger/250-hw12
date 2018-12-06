@@ -5,23 +5,23 @@ global _start
 
 _start:
 
-;mov ecx, 10 ; input
+;mov ecx, 10
 pop ecx ;get input
-mov eax, 1 ; sum
-
+mov eax, ecx ;sum
+mov ebx, 1 ;counter
 next:
-cmp ecx, 1
-jle endfor
 
-mul ecx
+add eax, ecx
 
-dec ecx
-jmp next
+inc ebx
+cmp ebx, ecx
 
-endfor:
+jle next
 
-;the sum is already in eax
 call iprintLF
 
 end:
 call quit
+
+
+
